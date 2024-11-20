@@ -1,42 +1,27 @@
 # Proyecto: Optimización de Ingresos en una Tienda en Línea
 
 ## Contexto
-El proyecto se lleva a cabo en una gran tienda en línea, donde se han recopilado hipótesis con el departamento de marketing que podrían ayudar a aumentar los ingresos. El objetivo es priorizar estas hipótesis, realizar un test A/B y analizar los resultados.
+Este proyecto se lleva a cabo en una gran tienda en línea, donde el departamento de marketing ha planteado diversas hipótesis que podrían contribuir al aumento de los ingresos. El objetivo es priorizar estas hipótesis, realizar un test A/B para probarlas y analizar los resultados obtenidos con el fin de optimizar la estrategia de ingresos de la tienda.
 
-## Descripción de los Datos
+## Herramientas Utilizadas
+- **Python (Pandas, NumPy):** Para la manipulación y análisis de datos.
+- **Matplotlib / Seaborn:** Para la visualización de los datos.
+- **Análisis A/B:** Aplicación del test A/B para evaluar el impacto de las hipótesis sobre el comportamiento de los usuarios y los ingresos.
+- **Frameworks ICE y RICE:** Para la priorización de las hipótesis.
 
-### Datos utilizados en la primera parte del proyecto
-- **Hipótesis**: `/datasets/hypotheses_us.csv`
-  - Hypotheses: Descripciones breves de las hipótesis.
-  - Reach: Alcance del usuario (escala del 1 al 10).
-  - Impact: Impacto en los usuarios (escala del 1 al 10).
-  - Confidence: Confianza en la hipótesis (escala del 1 al 10).
-  - Effort: Recursos necesarios para probar una hipótesis (escala del 1 al 10).
+## Análisis de Resultados
+### 1. **Priorizar Hipótesis**
+- **Framework ICE:** Se utilizó para ordenar las hipótesis basándose en el impacto, la confianza y el esfuerzo. Las hipótesis con mayor puntuación en estos tres aspectos fueron priorizadas para las pruebas.
+- **Framework RICE:** Se aplicó este segundo framework para evaluar las hipótesis en función de su alcance, impacto, confianza y esfuerzo. Se compararon los resultados de ICE y RICE, destacando diferencias clave en la priorización de ciertas hipótesis.
 
-### Datos utilizados en la segunda parte del proyecto
-- **Órdenes**: `/datasets/orders_us.csv`
-  - transactionId: Identificador de pedido.
-  - visitorId: Identificador del usuario que realizó el pedido.
-  - date: Fecha del pedido.
-  - revenue: Ingresos del pedido.
-  - group: Grupo del test A/B al que pertenece el usuario.
+### 2. **Análisis de Test A/B**
+- **Ingreso Acumulado y Tamaño Promedio de Pedido:** Se crearon gráficos que muestran el rendimiento de cada grupo (A y B) en términos de ingresos acumulados y tamaño promedio de pedido. El análisis reveló que el grupo B mostró un rendimiento superior en términos de conversión.
+- **Tasa de Conversión:** Se calculó y representó la tasa de conversión para cada grupo. El grupo B mostró una tasa de conversión significativamente más alta que el grupo A, lo que sugiere que las modificaciones implementadas en el grupo B generaron un mayor interés y comportamiento de compra.
+- **Análisis de Dispersión:** Se realizó un análisis de dispersión para evaluar la relación entre el número de pedidos y los precios. Se identificaron anomalías en los precios y en el volumen de pedidos, lo que ayudó a detectar áreas donde se podría mejorar la experiencia de compra.
+- **Evaluación de Significancia Estadística:** Se analizó la significancia estadística de las diferencias en la tasa de conversión y el tamaño promedio de los pedidos entre ambos grupos. Los resultados mostraron que las diferencias en las conversiones fueron significativas, mientras que no hubo diferencias significativas en los tamaños promedio de los pedidos.
 
-- **Visitas**: `/datasets/visits_us.csv`
-  - date: Fecha.
-  - group: Grupo del test A/B.
-  - visits: Número de visitas en la fecha especificada para el grupo de test A/B.
+## Conclusiones
+- **Grupo B como Líder:** A partir de los análisis realizados, se decidió considerar el grupo B como líder de la prueba. Este grupo presentó un mejor desempeño en la tasa de conversión, mientras que no hubo una diferencia estadísticamente significativa en los tamaños de los pedidos entre ambos grupos.
+- **Optimización de Ingresos:** El grupo B muestra un mayor potencial de conversión, lo que sugiere que las estrategias implementadas en ese grupo tienen el impacto deseado en el comportamiento de compra de los usuarios. A partir de estos resultados, se recomienda ajustar las estrategias basadas en las características de este grupo para continuar optimizando los ingresos.
 
-## Pasos Realizados
-1. **Priorizar Hipótesis**:
-   - Aplicar el framework ICE para ordenar las hipótesis por prioridad.
-   - Aplicar el framework RICE para ordenar las hipótesis por prioridad y comparar cambios en la priorización.
-
-2. **Análisis de Test A/B**:
-   - Gráficos del ingreso acumulado y tamaño de pedido promedio por grupo, con conclusiones.
-   - Cálculo y representación de la tasa de conversión de cada grupo con conclusiones.
-   - Análisis de dispersión del número de pedidos y precios de los pedidos, con identificación de anomalías.
-   - Evaluación de la significancia estadística en conversiones y tamaños promedio de pedidos entre grupos.
-   - Toma de decisiones basada en los resultados del test.
-
-## Conclusión
-De acuerdo al análisis realizado, se decidió considerar el grupo B como líder de la prueba debido a su rendimiento en la conversión y a la falta de diferencia significativa en el tamaño promedio de pedidos entre ambos grupos.
+Este análisis ha permitido identificar cuál de las hipótesis puede generar mayores ingresos, lo que ayudará a la tienda en línea a enfocar sus esfuerzos de marketing de manera más efectiva.
